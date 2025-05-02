@@ -1,6 +1,7 @@
 {
   "name": "hosting",
   "version": "0.1.0",
+  "homepage": "https://karas.netlify.app",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.14.0",
