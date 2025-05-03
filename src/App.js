@@ -18,6 +18,9 @@ function App() {
 					</Link>
 					<Stack direction="row" spacing={2} padding="2.5px" display="flex" alignItems="center">
 						<Divider orientation='vertical'/>
+						<Link underline='none' component={ReactRouterDomLink} to="/">
+							hom
+						</Link>
 						<Link underline='none' component={ReactRouterDomLink} to="/roadmap">
 							roadmap
 						</Link>
