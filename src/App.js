@@ -2,6 +2,7 @@ import { AppBar,Avatar, Divider, Link, Stack } from '@mui/material';
 import './App.css';
 import {Routes,Route} from 'react-router-dom'
 import NotFound from './NotFound'
+import { Link as ReactRouterDomLink } from 'react-router-dom';
 
 function App() {
 
@@ -17,13 +18,10 @@ function App() {
 					</Link>
 					<Stack direction="row" spacing={2} padding="2.5px" display="flex" alignItems="center">
 						<Divider orientation='vertical'/>
-						<Link underline='none' href="/">
-							home
-						</Link>
-						<Link underline='none' href="/roadmap">
+						<Link underline='none' component={ReactRouterDomLink} to="/roadmap">
 							roadmap
 						</Link>
-						<Link underline='none' href="/projects">
+						<Link underline='non' component={ReactRouterDomLink} to="/projects">
 							projects
 						</Link>
 					</Stack>
