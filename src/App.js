@@ -15,7 +15,7 @@ function App() {
 							<Avatar alt='my logo on github' src='logo.png' sx={{border:"2.5px #AAA solid"}}/>
 						</div>
 					</Link>
-					<Stack direction="row" spacing={2} padding="2.5px">
+					<Stack direction="row" spacing={2} padding="2.5px" display="flex" alignItems="center">
 						<Divider orientation='vertical'/>
 						<Link underline='none' href="/">
 							home
