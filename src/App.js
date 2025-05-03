@@ -21,7 +21,7 @@ function App() {
 						<Link underline='none' component={ReactRouterDomLink} to="/roadmap">
 							roadmap
 						</Link>
-						<Link underline='non' component={ReactRouterDomLink} to="/projects">
+						<Link underline='none' component={ReactRouterDomLink} to="/projects">
 							projects
 						</Link>
 					</Stack>
