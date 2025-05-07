@@ -28,11 +28,10 @@ function App() {
 			<Stack direction="column" spacing={5}>
 			<Routes>
 				<Route path='/' element={<Info/>} />
-					<Route path='roadmap' element={<></>}/>
-					<Route path='projects' element={<Projects/>}>
-						<Route path=':ProjectId' element={<></>}/>
-					</Route>
-					<Route path="*" element={<NotFound/>} />
+					<Route path='/roadmap' element={<></>}/>
+					<Route path='/projects' element={<Projects/>}/>
+					<Route path='/:ProjectId' element={<></>}/>
+				<Route path="*" element={<NotFound/>} />
 			</Routes>
 			</Stack>
 		</div>
