@@ -1,43 +1,45 @@
-import { AppBar,Avatar, Divider, Link, Stack } from '@mui/material';
+import { Avatar, Divider, Link, Stack, useMediaQuery } from '@mui/material';
 import './App.css';
-import {Routes,Route} from 'react-router-dom'
+import {Routes,Route, useParams, useLocation} from 'react-router-dom'
 import NotFound from './NotFound'
 import { Link as ReactRouterDomLink } from 'react-router-dom';
+import Projects from './Projects';
+import { blue } from '@mui/material/colors';
+import Info from './Info';
+import ProjectAppBar from './appBar';
+
 
 function App() {
 
+	const isMobile = useMediaQuery("(max-width:425px)");
+	const isLight = useMediaQuery('(prefers-color-scheme: light)');
+	const Modes = [
+		isLight ? "#FFF" : "#1f1f2f",
+		isLight ? "#FFF" : "#010409",
+		isLight ?  [blue[500]] : ["#FFFFFF",blue[500]],
+	];
+
+	const Location = useLocation();
+	const ShowBars = Location != `projects/${useParams}`;
 
 	return (
-		<div className="App">
-			<AppBar sx={{padding:"5px"}} color='transparent'>
-				<Stack direction="row" spacing={5}>
-					<Link href="https://github.com/karas-naeem">
-						<div title='my account at github'>
-							<Avatar alt='my logo on github' src='logo.png' sx={{border:"2.5px #AAA solid"}}/>
-						</div>
-					</Link>
-					<Stack direction="row" spacing={2} padding="2.5px" display="flex" alignItems="center">
-						<Divider orientation='vertical'/>
-						<Link underline='none' component={ReactRouterDomLink} to="/">
-							home
-						</Link>
-						<Link underline='none' component={ReactRouterDomLink} to="/roadmap">
-							roadmap
-						</Link>
-						<Link underline='none' component={ReactRouterDomLink} to="/projects">
-							projects
-						</Link>
-					</Stack>
-				</Stack>
-				
-			</AppBar>
+		<div className="App" style={{background:Modes[0]}}>
+			{ShowBars && <ProjectAppBar/>}
+			<Stack direction="column" spacing={5}>
 			<Routes>
-				<Route index element={<></>}/>
-				<Route path="*" element={<NotFound/>} />
+				<Route path='/' element={<Info/>} />
+					<Route path='roadmap' element={<></>}/>
+					<Route path='projects' element={<Projects/>}>
+						<Route path=':ProjectId' element={<></>}/>
+					</Route>
+					<Route path="*" element={<NotFound/>} />
 			</Routes>
+			</Stack>
 		</div>
 	);
+
 }
 
 
 export default App;
+
