@@ -23,7 +23,7 @@ export default function Projects() {
                     <Info/>
                     <Grid margin="50px auto" direction="row" display="flex" flexDirection="row" >
                         <Grid sx={6}>
-                            <iframe src="/1" style={{width:"18em",borderRadius:"25px",height:"20em"}}>
+                            <iframe loading="lazy" src="/1" style={{width:"18em",borderRadius:"25px",height:"20em"}}>
 
                             </iframe>
                         </Grid>

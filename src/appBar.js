@@ -18,7 +18,9 @@ export default function ProjectAppBar()
 				<Stack direction="row" spacing={5}>
 					<Link href="https://github.com/karas-naeem">
 						<div title='my account at github'>
-							<Avatar alt='my logo on github' src='logo.png' sx={{border:"2.5px #AAA solid"}}/>
+							<Avatar alt='my logo on github' src='logo.png' sx={{border:"2.5px #AAA solid"}}>
+								
+							</Avatar>
 						</div>
 					</Link>
 					<Stack direction="row"  spacing={isMobile ? 1 : 2} padding="2.5px" display="flex" alignItems="center">
