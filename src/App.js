@@ -1,27 +1,17 @@
-import { Avatar, Divider, Link, Stack, useMediaQuery } from '@mui/material';
+import { Stack, useMediaQuery } from '@mui/material';
 import './App.css';
-import {Routes,Route, useParams, useLocation} from 'react-router-dom'
+import {Routes,Route} from 'react-router-dom'
 import NotFound from './NotFound'
-import { Link as ReactRouterDomLink } from 'react-router-dom';
 import Projects from "./Projects";
 import { blue } from '@mui/material/colors';
 import Info from './Info';
 import ProjectAppBar from './ProjectAppBar';
 import { ProjectsContext } from './context/projectsContext';
 import Project from './Project';
-import { lazy, Suspense } from 'react';
-
-import { CircularProgress } from '@mui/material';
+import { Suspense } from 'react';
 
 
 function App() {
-
-	const lazyProjectContext = lazy(() => import('./context/projectsContext'));
-	const lazyProject = lazy(() => import('./Project'));
-	const lazyProjects = lazy(() => import('./Projects'));
-	const lazyInfo = lazy(() => import('./Info'));
-	const lazyProjectAppBar = lazy(() => import('./ProjectAppBar'));
-	const lazyNotFound = lazy(() => import('./NotFound'));
 
 	const isLight = useMediaQuery('(prefers-color-scheme: light)');
 	const Modes = [

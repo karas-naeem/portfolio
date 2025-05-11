@@ -1,10 +1,6 @@
-import { Typography , Avatar } from "@mui/material";
-import { blue } from "@mui/material/colors";
-import { useLocation, useParams } from "react-router-dom";
-
+/* eslint-disable jsx-a11y/iframe-has-title */
 import { Container, Grid, useMediaQuery } from "@mui/material";
 import Info from "./Info";
-import ProjectAppBar from "./ProjectAppBar";
 import { useContext } from "react";
 import {ProjectsContext} from "./context/projectsContext";
 
@@ -19,8 +15,9 @@ export default function Projects() {
     function ReturnTitle(id)
     {
         const info = useContext(ProjectsContext).map(
+            // eslint-disable-next-line array-callback-return
             project => {
-                if (project.id == id) {
+                if (project.id === id) {
                     return `
                             name:${project.name}\ndescription:${project.description}
                         `;
@@ -34,7 +31,7 @@ export default function Projects() {
     const projects = useContext(ProjectsContext).map(
         project => {
             return (
-                <div title={ReturnTitle(project.id)} onMouseEnter={E => {console.log(E.currentTarget.title)}} key={project.id} style={{ margin: "auto", padding: "10px", borderRadius: "25px", background: Modes[0], width: "18em", height: "20em"}}>
+                <div title={ReturnTitle(+project.id)} onMouseEnter={E => {console.log(E.currentTarget.title)}} key={project.id} style={{ margin: "auto", padding: "10px", borderRadius: "25px", background: Modes[0], width: "18em", height: "20em"}}>
                     <div style={{width:"100px",height:"100px"}}>
                             
                         <iframe loading="lazy" src={`projects/${project.id}`} style={{ width: "18em",pointerEvents:"none",borderRadius: "25px", height: "20em" }}>
