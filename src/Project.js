@@ -8,7 +8,7 @@ export default function Projects() {
 
     const projects = useContext(ProjectsContext).find((project) => {
         console.log(project.id, ProjectId);
-        return project.id == ProjectId
+        return +project.id === +ProjectId
     });
 
     if (projects) {
