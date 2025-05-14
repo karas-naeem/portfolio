@@ -11,23 +11,18 @@ export default function ReCaptcha() {
   return (
     <div>
       <form id="contact-form" action="/contact" method="POST" style={{ display: 'flex', flexDirection:"column" , justifyContent: 'center', alignItems: 'center' }}>
-        <label htmlFor="name">الاسم:</label>
+        <label htmlFor="name">name:</label>
         <input type="text" name="name" required />
 
-        <label htmlFor="email">البريد الإلكتروني:</label>
+        <label htmlFor="email">email:</label>
         <input type="email" name="email" required />
 
-        <label htmlFor="message">الرسالة:</label>
+        <label htmlFor="message">massage:</label>
         <textarea name="message" required></textarea>
 
-        <button
-          className="g-recaptcha"
-          data-sitekey={siteKey}
-          data-callback="onSubmit"
-          data-action="submit"
-        >
-          إرسال
-        </button>
+        <div class="g-recaptcha" data-sitekey={siteKey} data-action="LOGIN"></div>
+
+        <input type="submit" value="send" />
       </form>
 
       <script src="https://www.google.com/recaptcha/api.js" async defer></script>
