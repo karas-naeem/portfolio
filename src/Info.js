@@ -1,4 +1,3 @@
-import { Padding } from "@mui/icons-material";
 import { Grid,Typography,Avatar,useMediaQuery } from "@mui/material"
 
 export default function Info()
