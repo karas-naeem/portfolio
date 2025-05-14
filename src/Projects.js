@@ -1,8 +1,10 @@
+// eslint-disable-next-line array-callback-return
 /* eslint-disable jsx-a11y/iframe-has-title */
-import { Container, Grid, useMediaQuery } from "@mui/material";
-import Info from "./Info";
+import { Button, Container, Grid, IconButton, useMediaQuery } from "@mui/material";
 import { useContext } from "react";
 import {ProjectsContext} from "./context/projectsContext";
+import { Link } from "react-router-dom";
+import { RemoveRedEye } from "@mui/icons-material";
 
 export default function Projects() {
 
@@ -26,30 +28,43 @@ export default function Projects() {
         )
         return info;
     }
-
     
-    const projects = useContext(ProjectsContext).map(
-        project => {
-            return (
-                <div title={ReturnTitle(+project.id)} onMouseEnter={E => {console.log(E.currentTarget.title)}} key={project.id} style={{ margin: "auto", padding: "10px", borderRadius: "25px", background: Modes[0], width: "18em", height: "20em"}}>
-                    <div style={{width:"100px",height:"100px"}}>
-                            
-                        <iframe loading="lazy" src={`projects/${project.id}`} style={{ width: "18em",pointerEvents:"none",borderRadius: "25px", height: "20em" }}>
+    
+    const Projects = (conditional) => {
 
-                        </iframe>
+       let Data = useContext(ProjectsContext).map(
+        // eslint-disable-next-line array-callback-return
+        project => {
+            if(conditional)
+            {
+                return (
+                    <div title={ReturnTitle(+project.id)} key={project.id} style={{ margin: "50px auto", padding: "10px", borderRadius: "25px", background: Modes[0], width: "18em", height: "20em"}}>
+                                <iframe loading="lazy" src={`projects/${project.id}`} style={{ width: "18em",pointerEvents:"none",borderRadius: "25px", height: "20em" }}>
+        
+                                </iframe>
+                                <Link to={`/projects/${project.id}`}>
+                                    <Button variant="contained">
+                                        <IconButton>
+                                            <RemoveRedEye sx={{color:"white"}}/>
+                                        </IconButton>
+                                            open project
+                                    </Button>
+                                </Link>
                     </div>
-                </div>
-            )
+                )
+            }
         }
     )
 
+    return Data;
+}
     return (<>
         <Container style={{ marginTop: "50px" }}>
             <Grid spacing={10} direction="column" container sx={{ color: Modes[2] }}>
-                <Info />
                 <Grid margin="50px auto" direction="row" display="flex" flexDirection="row">
                     <Grid sx={6}>
-                        {projects}
+                        {/* <h1></h1> */}
+                        {Projects(true)}
                     </Grid>
                     {/*
         //// </Grid>

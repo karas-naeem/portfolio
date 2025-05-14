@@ -8,8 +8,7 @@ import Info from './Info';
 import ProjectAppBar from './ProjectAppBar';
 import { ProjectsContext } from './context/projectsContext';
 import Project from './Project';
-import { Suspense } from 'react';
-
+import ReCaptcha from './reCaptcha';
 
 function App() {
 
@@ -20,12 +19,12 @@ function App() {
 		isLight ?  [blue[500]] : ["#FFFFFF",blue[500]],
 	];
 
-
 	return (
-		<Suspense fallback={<h1>loading</h1>}>
 			<ProjectsContext.Provider value={
 				[
-					{ id: 1, name: "project 1", description: "this is project 1",componet:<>hello world</>}
+					{ id: 1, name: "project 1", description: "this is project 1",componet:<>hello world</>,type:"my"},
+					{ id: 2, name: "project 2", description: "this is project 2",componet:<>hello world</>,type:"learning video",source:"اكادميه ترميز"}
+
 				]
 			}>
 				
@@ -34,7 +33,10 @@ function App() {
 						<Routes>
 								<Route index element={<>
 									<ProjectAppBar />
-									<Info/>
+									<Stack direction="column" spacing={10} justifyContent="center" alignItems="center">
+										<Info/>
+										<ReCaptcha/>	
+									</Stack>
 								</>} />
 								<Route path='/roadmap' element={
 								<>
@@ -51,7 +53,6 @@ function App() {
 					</Stack>
 				</div>
 			</ProjectsContext.Provider>
-		</Suspense>
 	);
 
 }
