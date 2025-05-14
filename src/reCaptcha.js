@@ -3,7 +3,7 @@ import React from 'react';
 export default function ReCaptcha() {
   const siteKey = "6LextTkrAAAAAG7D6wUGa4Y7591QS4y6EUbda58L";
 
-  // دالة التحقق عند النقر على زر الإرسال
+  // eslint-disable-next-line no-unused-vars
   const onSubmit = (token) => {
     document.getElementById('contact-form').submit();
   };
@@ -30,7 +30,6 @@ export default function ReCaptcha() {
         </button>
       </form>
 
-      {/* سكربت reCAPTCHA */}
       <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </div>
   );
