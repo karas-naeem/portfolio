@@ -7,8 +7,6 @@ export default function Info()
 
     const isSmallPhones = useMediaQuery("(max-width:330px)");
 
-    const isVerySmallPhones = useMediaQuery("(max-width:310px)");
-
     console.log(isSmallPhones);
 
     return(
