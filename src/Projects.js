@@ -61,8 +61,8 @@ export default function Projects() {
     return (<>
         <Container style={{ marginTop: "50px" }}>
             <Grid spacing={10} direction="column" container sx={{ color: Modes[2] }}>
-                <Grid margin="50px auto" direction="row" display="flex" flexDirection="row">
-                    <Grid sx={6}>
+                <Grid margin={"50px auto"} direction="row" display="flex" flexDirection="row">
+                    <Grid item xs={12} md={6}>
                         {/* <h1></h1> */}
                         {Projects(true)}
                     </Grid>

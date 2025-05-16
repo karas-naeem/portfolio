@@ -8,7 +8,7 @@ import Info from './Info';
 import ProjectAppBar from './ProjectAppBar';
 import { ProjectsContext } from './context/projectsContext';
 import Project from './Project';
-import ReCaptcha from './reCaptcha';
+import Reference from './reference';
 
 function App() {
 
@@ -35,7 +35,7 @@ function App() {
 									<ProjectAppBar />
 									<Stack direction="column" spacing={10} justifyContent="center" alignItems="center">
 										<Info/>
-										<ReCaptcha/>	
+										<Reference/>	
 									</Stack>
 								</>} />
 								<Route path='/roadmap' element={
