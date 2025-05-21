@@ -14,7 +14,7 @@ export default function Projects() {
     if (projects) {
         return (
             <div>
-                {projects.componet}
+                {projects.component}
             </div>
         );
 

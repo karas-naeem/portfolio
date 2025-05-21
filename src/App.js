@@ -22,8 +22,8 @@ function App() {
 	return (
 			<ProjectsContext.Provider value={
 				[
-					{ id: 1, name: "project 1", description: "this is project 1",componet:<>hello world</>,type:"my"},
-					{ id: 2, name: "project 2", description: "this is project 2",componet:<>مهامي</>,type:"learning video",source:"tarmez academy"},
+					{ id: 1, name: "project 1", description: "this is project 1",component:<>hello world</>,type:"my"},
+					{ id: 2, name: "مشروع مهامي", description: "this is project 2",component:<>مهامي</>,type:"learning video",source:"tarmez academy"},
 
 				]
 			}>
