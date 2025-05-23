@@ -9,6 +9,7 @@ import ProjectAppBar from './ProjectAppBar';
 import { ProjectsContext } from './context/projectsContext';
 import Project from './Project';
 import Reference from './reference';
+import ToDoList from "./projects/tarmez academy/ToDoList/ToDolist"
 
 function App() {
 
@@ -22,9 +23,9 @@ function App() {
 	return (
 			<ProjectsContext.Provider value={
 				[
-					{ id: 1, name: "project 1", description: "this is project 1",component:<>hello world</>,type:"my"},
-					{ id: 2, name: "مشروع مهامي", description: "this is project 2",component:<>مهامي</>,type:"learning video",source:"tarmez academy"},
-
+					{ id: 1, name: "kraspedia", description: "kraspedia is information",component:<></>,type:"my"},
+					{ id: 2, name: "kraspedia", description: "kraspedia is information",component:<></>,type:"my"},
+					{ id:3 , name:"مهامي" , description:"مهامي هو مشروع اداره مهام مشروح كيفيه صنعه علي اكادميه ترميز",componet:<ToDoList/>,type:"learning video",source:"tarmez academy"}
 				]
 			}>
 				

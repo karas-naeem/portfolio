@@ -1,0 +1,6 @@
+ <svg viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <circle cx="75" cy="75" r="50" fill="#ff0"/>
+        <text x="55" y="100" font-family="system" font-size="80">
+            <tspan>k</tspan>
+        </text>
+  </svg>
