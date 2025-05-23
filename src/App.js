@@ -24,8 +24,6 @@ function App() {
 			<ProjectsContext.Provider value={
 				[
 					{ id: 1, name: "kraspedia", description: "kraspedia is information",component:<></>,type:"my"},
-					{ id: 2, name: "kraspedia", description: "kraspedia is information",component:<></>,type:"my"},
-					{ id:3 , name:"مهامي" , description:"مهامي هو مشروع اداره مهام مشروح كيفيه صنعه علي اكادميه ترميز",componet:<ToDoList/>,type:"learning video",source:"tarmez academy"}
 				]
 			}>
 				
