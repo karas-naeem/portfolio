@@ -10,7 +10,6 @@ import { ProjectsContext } from './context/projectsContext';
 import Project from './Project';
 import Reference from './reference';
 import ToDoList from "./projects/tarmez academy/ToDoList/ToDolist"
-import { useEffect } from 'react';
 
 function App() {
 
