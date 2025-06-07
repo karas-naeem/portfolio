@@ -1,5 +1,5 @@
- <svg viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <circle cx="200" cy="70" r="15" fill="#FF0"/>
+<svg viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <circle cx="200" cy="70" r="15" fill="#FF0"/>
         <text x="50" y="50" font-family="system"> 
             <tspan x="50" y="50"  font-size="45">
                 kraspedia
@@ -11,4 +11,4 @@
             k
             </tspan>
         </text>
-    </svg>
+</svg>

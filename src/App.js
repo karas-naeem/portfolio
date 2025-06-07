@@ -1,6 +1,6 @@
 import { Stack, useMediaQuery } from '@mui/material';
 import './App.css';
-import {Routes,Route} from 'react-router-dom'
+import {Routes,Route, useParams} from 'react-router-dom'
 import NotFound from './NotFound'
 import Projects from "./Projects";
 import { blue } from '@mui/material/colors';
@@ -10,6 +10,7 @@ import { ProjectsContext } from './context/projectsContext';
 import Project from './Project';
 import Reference from './reference';
 import ToDoList from "./projects/tarmez academy/ToDoList/ToDolist"
+import { useEffect } from 'react';
 
 function App() {
 
@@ -20,10 +21,14 @@ function App() {
 		isLight ?  [blue[500]] : ["#FFFFFF",blue[500]],
 	];
 
+
 	return (
 			<ProjectsContext.Provider value={
 				[
-					{ id: 1, name: "kraspedia", description: "kraspedia is information",component:<></>,type:"my"},
+					// Tarmez Academy Projects
+					{ id:1 , name:"مهامي" , description:"مهامي هو تطبيق للمهام",component:<ToDoList/>,type:"learning video",source:"tarmez academy"},
+					// My Projects
+					{ id:2, name: "kraspedia", description: "kraspedia is information",component:<></>,type:"my"},
 				]
 			}>
 				
@@ -46,7 +51,7 @@ function App() {
 									<Projects />
 								</>
 								} />
-							<Route path='/projects/:ProjectId' element={<Project/>}/>
+							<Route path='/projects/:projectId' element={<Project/>}/>
 								<Route path="*" element={<NotFound/>} />
 						</Routes>
 					</Stack>

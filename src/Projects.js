@@ -8,12 +8,6 @@ import { Link } from "react-router-dom";
 import { ExpandLess, ExpandMore, RemoveRedEye } from "@mui/icons-material";
 export default function Projects() {
 
-    const [open, setOpen] = useState(false);
-
-    const handleClick = () => {
-        setOpen(!open);
-    };
-
     const Modes = [
         useMediaQuery('(prefers-color-scheme: light)') ? "#FFF" : "#1f1f2f",
         useMediaQuery('(prefers-color-scheme: light)') ? "#FFF" : "#010409",
@@ -67,10 +61,18 @@ export default function Projects() {
 }
 
 function ProjectsList({type,icon,source = "my"}) {
+
+    
+    const [open, setOpen] = useState(false);
+
+    const handleClick = () => {
+        setOpen(!open);
+    };
+
     return (        
     <Container style={{ marginTop: "40px" }}>
             <Grid direction="column" container sx={{ color: Modes[2] }}>
-                <Grid margin={"50px auto"} direction="column" display="flex" flexDirection="column">
+                <Grid direction="column" display="flex" flexDirection="column">
                     <ListItemButton sx={{width:"18em"}} onClick={handleClick}>
                         <ListItemIcon>
                             <Avatar src={icon} />

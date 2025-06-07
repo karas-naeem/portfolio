@@ -4,17 +4,16 @@ import { ProjectsContext } from "./context/projectsContext";
 
 export default function Projects() {
 
-    const { ProjectId } = useParams();
+    const { projectId } = useParams();
 
-    const projects = useContext(ProjectsContext).find((project) => {
-        console.log(project.id, ProjectId);
-        return +project.id === +ProjectId
+    const project = useContext(ProjectsContext).find((project) => {
+        return +project.id === +projectId
     });
 
-    if (projects) {
+    if (project) {
         return (
             <div>
-                {projects.component}
+                {project.component}
             </div>
         );
 
