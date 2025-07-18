@@ -90,8 +90,7 @@ function ProjectsList({type,icon,source = "my"}) {
     }
 
     return (<>
-        <ProjectsList type="my" icon="logo.png" />
-        <ProjectsList type="learning video" source="tarmez academy" icon="tarmezAcademy.jpg"/>
+        <ProjectsList type="learning video" source="tarmez-academy" icon="tarmezAcademy.jpg"/>
     </>);
 }
 

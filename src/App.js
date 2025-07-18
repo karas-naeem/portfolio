@@ -1,37 +1,36 @@
-import { Stack, useMediaQuery } from '@mui/material';
+import { Stack } from '@mui/material';
 import './App.css';
-import {Routes,Route, useParams} from 'react-router-dom'
+import {Routes,Route} from 'react-router-dom'
 import NotFound from './NotFound'
 import Projects from "./Projects";
-import { blue } from '@mui/material/colors';
 import Info from './Info';
 import ProjectAppBar from './ProjectAppBar';
 import { ProjectsContext } from './context/projectsContext';
 import Project from './Project';
 import Reference from './reference';
-import ToDoList from "./projects/tarmez academy/ToDoList/ToDolist"
+import ToDoList from "./projects/tarmez-academy/ToDoList/ToDoList.js"
+import Roadmap from "./roadmap"
+import {ModesFunc} from './modes'
 
 function App() {
 
-	const isLight = useMediaQuery('(prefers-color-scheme: light)');
-	const Modes = [
-		isLight ? "#FFF" : "#1f1f2f",
-		isLight ? "#FFF" : "#010409",
-		isLight ?  [blue[500]] : ["#FFFFFF",blue[500]],
-	];
-
+	const Modes = ModesFunc();
 
 	return (
 			<ProjectsContext.Provider value={
 				[
 					// Tarmez Academy Projects
-					{ id:1 , name:"مهامي" , description:"مهامي هو تطبيق للمهام",component:<ToDoList/>,type:"learning video",source:"tarmez academy"},
+					{ id:1 , name:"مهامي" , description:"مهامي هو تطبيق للمهام",component:<ToDoList/>,type:"learning video",source:"tarmez-academy"},
 					// My Projects
-					{ id:2, name: "kraspedia", description: "kraspedia is information",component:<></>,type:"my"},
+					{ id:2 , name:"HTML Compiler" , description:"HTML Compiler is a compiler for HTML,CSS,JS",type:"",source:"my"}
 				]
 			}>
-				
-				<div className="App" style={{background:Modes[0]}}>
+
+
+
+				<div className="App" style={{background:Modes[0]}} onKeyDown={e => {
+
+				}}	>
 					<Stack direction="column" spacing={5}>
 						<Routes>
 								<Route index element={<>
@@ -44,6 +43,7 @@ function App() {
 								<Route path='/roadmap' element={
 								<>
 									<ProjectAppBar/>
+									<Roadmap/>
 								</>} />
 								<Route path='/projects' element={<>
 									<ProjectAppBar />

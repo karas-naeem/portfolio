@@ -1,11 +1,15 @@
-import { blue,red } from '@mui/material/colors';
+import { red } from '@mui/material/colors';
 import { useState } from 'react';
 import {useRef} from 'react';
 import emailjs from 'emailjs-com';
 import ReCAPTCHA from 'react-google-recaptcha';
 import Massage from './massage';
+import {ModesFunc} from "./modes";
 
 export default function Reference() {
+
+
+  const Modes = ModesFunc();
 
   const form = useRef();
 
@@ -22,7 +26,7 @@ export default function Reference() {
 
    
   return (
-    <div style={{margin:"50px",background:blue[300],color:"#FFFFFF",borderRadius:"25px",width:"90vw", display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
+    <div style={{margin:"50px",background:Modes[4],color:"#FFFFFF",borderRadius:"25px",width:"90vw", display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
       <form ref={form} id="contact-form" onSubmit={e => {
           e.preventDefault();
           if(!captchaToken) {
