@@ -1,0 +1,11 @@
+.ToDo::-webkit-scrollbar{
+    width: 10px;
+}
+
+.ToDo::-webkit-scrollbar-thumb{
+    background-color: #283593;
+}
+
+.ToDo > * {
+    margin-right: 10px;
+}

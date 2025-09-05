@@ -1,0 +1,18 @@
+@import "../../../index.css";
+
+.weather-app {
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    font-family: Ibm-plex-sans-ariabc;
+}
+
+@media (max-width:1000px)
+{
+    .weather-image{
+        display: none;
+    }
+    .weather{
+        justify-content: center !important;
+    }
+}
