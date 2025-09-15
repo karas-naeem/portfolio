@@ -12,6 +12,7 @@ import ToDoList from "./projects/tarmez-academy/ToDoList/ToDoList.js"
 import Roadmap from "./roadmap"
 import {ModesFunc} from './modes'
 import Weather from "./projects/tarmez-academy/Weather/Components/Weather";
+import BirdOS from './projects/my/birdos/birdos.jsx';
 
 function App() {
 
@@ -22,7 +23,9 @@ function App() {
 				[
 					// Tarmez Academy Projects
 					{ id:1 , name:"مهامي" , description:"مهامي هو تطبيق للمهام",component:<ToDoList/>,type:"learning video",source:"tarmez-academy"},
-					{ id:2 , name:"weather" , description:"weather is app this idea get the weather",component:<Weather/>,type:"learning video",source:"tarmez-academy"}
+					{ id:2 , name:"weather" , description:"weather is app this idea get the weather",component:<Weather/>,type:"learning video",source:"tarmez-academy"},
+					// MY project
+					{ id:3 , name:"Bird OS",description:"An UI For Bird OS",component:<BirdOS/>,type:"my"}
 				]
 			}>
 

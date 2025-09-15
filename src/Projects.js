@@ -40,7 +40,7 @@ export default function Projects() {
                     return (
                         <div title={ReturnTitle(+project.id)} key={project.id} style={{ margin: "50px auto", borderRadius: "25px", width: "18em", height: "20em"}}>
                                     <p>{project.name}</p>
-                                    <iframe loading="lazy" src={`projects/${project.id}`} style={{ width: "13em",pointerEvents:"none",borderRadius: "25px",border:"gray 5px solid", height: "15em",margin:"" }}>
+                                    <iframe loading="lazy" src={`projects/${project.id}`} style={{ width: "13emz",pointerEvents:"none",borderRadius: "25px",border:"gray 5px solid", height: "15em",margin:"" }}>
             
                                     </iframe>
                                     <Link to={`/projects/${project.id}`}>
